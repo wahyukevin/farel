@@ -4,6 +4,7 @@ const { Client } = require("discord.js-selfbot-v13"),
   client = new Client({ checkUpdate: false }),
   reloadPresence = require("./config.js");
 //^^HAPUS INI JIKA INGIN MENGGUNAKAN RPC SAMSUNG
+  keepAlive = require('./keep_alive.js');
 // RPC DISCORD SAMSUNG GALAXY
 //* client.on('ready', async () => {
 //client.user.setSamsungActivity('com.tencent.ig', 'START');
