@@ -1,31 +1,30 @@
-const express = require('express');
+const express = require("express");
 const server = express();
 
-server.all('/', (req, res) => {
-   res.write("I'm alive");
-   res.end();
+server.all("/", (req, res) => {
+  res.write("I'm alive");
+  res.end();
 });
 
 function keepAlive() {
-   server.listen(80, () => {
-      console.log("Server is online!");
-   });
+  server.listen(80, () => {
+    console.log("Server is online!");
+  });
 }
 
 module.exports = keepAlive;
 
-const
-  { Client } = require('discord.js-selfbot-v13'),
-  dotenv = require('dotenv'),
-//HAPUS INI JIKA INGIN MENGGUNAKAN RPC SAMSUNG
-  client = new Client({checkUpdate: false,}),
-  reloadPresence = require("./config.js")
+const { Client } = require("discord.js-selfbot-v13"),
+  dotenv = require("dotenv"),
+  //HAPUS INI JIKA INGIN MENGGUNAKAN RPC SAMSUNG
+  client = new Client({ checkUpdate: false }),
+  reloadPresence = require("./config.js");
 //^^HAPUS INI JIKA INGIN MENGGUNAKAN RPC SAMSUNG
 // RPC DISCORD SAMSUNG GALAXY
 //* client.on('ready', async () => {
-    //client.user.setSamsungActivity('com.tencent.ig', 'START');
-    // client.user.setSamsungActivity('com.miHoYo.bh3oversea', 'UPDATE');
-     //client.user.setSamsungActivity('com.miHoYo.GenshinImpact', 'STOP');
+//client.user.setSamsungActivity('com.tencent.ig', 'START');
+// client.user.setSamsungActivity('com.miHoYo.bh3oversea', 'UPDATE');
+//client.user.setSamsungActivity('com.miHoYo.GenshinImpact', 'STOP');
 //* });
 
 dotenv.config();
@@ -37,7 +36,7 @@ if (!process.env.TOKEN) {
 
 client.login(process.env.TOKEN);
 
-  console.clear();
+console.clear();
 /* //HAPUS INI JIKA INGIN MENGGUNAKAN RPC SAMSUNG
   client.on("ready", async () => {
         global.startTime = new Date();
